@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Laptop Specs</title>
+
+  <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+  --primary-color: #11121a;
+  --hover-color: #272832;
+  --accent-color: #0071FF;
+  --text-color: #c9c9c9;
+}
+nav{
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--hover-color);
+  margin-top:-50px;
+  margin-left:-30px;
+  margin-right:-28px;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+}
+nav .home-li{
+  margin-right: auto;
+}
+nav li{
+  display: flex;
+}
+nav a{
+  display: flex;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 1em 2em;
+  transition: background-color 150ms ease;
+}
+nav a:hover{
+  background-color: var(--hover-color);
+}
+nav a.active-link{
+  border-bottom: 2px solid var(--text-color);
+}
+nav a.accent-link{
+  background-color: var(--accent-color);
+}
+#open-sidebar-button{
+  display: none;
+  background: none;
+  border: none;
+  padding: 1em;
+  margin-left: auto;
+  cursor: pointer;
+}
+#close-sidebar-button{
+  display: none;
+  background: none;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+}
+#overlay{
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: none;
+}
+.skip-link {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: var(--accent-color); 
+  color: #ffffff; 
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.skip-link:focus {
+  opacity: 1; 
+  pointer-events: auto; 
+  outline: 3px solid #ffffff; 
+}
+@media screen and (max-width: 700px) {
+  #open-sidebar-button, #close-sidebar-button{
+    display: block;
+  }
+  nav{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: min(15em, 100%);
+    z-index: 10;
+    border-left: 1px solid var(--hover-color);
+    transition: right 300ms ease-in-out;
+    margin-top:-20px;
+  margin-left:-20px;
+  margin-right:-20px;
+
+  }
+  nav.show{
+    right: 0;
+  }
+  nav.show ~ #overlay{
+    display: block;
+  }
+  nav ul{
+    width: 100%;
+    flex-direction: column;
+  }
+  nav a{
+    width: 100%;
+    padding-left: 2.5em;
+  }
+  nav a.active-link{
+    border-bottom: none;
+  }
+  nav .home-li{
+    margin-right: unset;
+  }
+}
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    .laptop-card {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .laptop-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .laptop-specs {
+      margin-top: 8px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z"/></svg>
+  </button>
+
+  <nav id="navbar">
+    <ul>
+      <li>
+        <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="m480-444.62-209.69 209.7q-7.23 7.23-17.5 7.42-10.27.19-17.89-7.42-7.61-7.62-7.61-17.7 0-10.07 7.61-17.69L444.62-480l-209.7-209.69q-7.23-7.23-7.42-17.5-.19-10.27 7.42-17.89 7.62-7.61 17.7-7.61 10.07 0 17.69 7.61L480-515.38l209.69-209.7q7.23-7.23 17.5-7.42 10.27-.19 17.89 7.42 7.61 7.62 7.61 17.7 0 10.07-7.61 17.69L515.38-480l209.7 209.69q7.23 7.23 7.42 17.5.19 10.27-7.42 17.89-7.62 7.61-17.7 7.61-10.07 0-17.69-7.61L480-444.62Z"/></svg>
+        </button>
+      </li>
+      <li class="home-li"><a class="active-link" aria-current="page" href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a class="accent-link" href="login.html">Login</a></li>
+    </ul>
+  </nav>
+  
+  <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+
+  <h1>Laptop Specifications</h1>
+
+  <div class="laptop-card">
+    <div class="laptop-title">1. Apple MacBook Pro 16" (M3)</div>
+    <div class="laptop-specs">
+      CPU: Apple M3 Pro | RAM: 16GB | Storage: 512GB SSD | GPU: 14-core | Display: 16.2" Retina | Battery: 22 hrs
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">2. Dell XPS 15 9530</div>
+    <div class="laptop-specs">
+      CPU: Intel Core i7-13700H | RAM: 16GB | Storage: 1TB SSD | GPU: RTX 4050 | Display: 15.6" OLED | Battery: 86Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">3. Lenovo ThinkPad X1 Carbon Gen 11</div>
+    <div class="laptop-specs">
+      CPU: Intel Core i7-1355U | RAM: 16GB | Storage: 512GB SSD | GPU: Iris Xe | Display: 14" WUXGA | Battery: 57Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">4. HP Spectre x360 14</div>
+    <div class="laptop-specs">
+      CPU: Intel Core i7-1355U | RAM: 16GB | Storage: 1TB SSD | GPU: Iris Xe | Display: 13.5" OLED | Battery: 66Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">5. ASUS ROG Zephyrus G14</div>
+    <div class="laptop-specs">
+      CPU: AMD Ryzen 9 7940HS | RAM: 16GB | Storage: 1TB SSD | GPU: RTX 4060 | Display: 14" QHD+ | Battery: 76Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">6. Acer Swift X 14</div>
+    <div class="laptop-specs">
+      CPU: Intel Core i7-13700H | RAM: 16GB | Storage: 1TB SSD | GPU: RTX 3050 | Display: 14" IPS | Battery: 59Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">7. Microsoft Surface Laptop 5</div>
+    <div class="laptop-specs">
+      CPU: Intel Core i7-1255U | RAM: 16GB | Storage: 512GB SSD | GPU: Iris Xe | Display: 13.5" PixelSense | Battery: 17 hrs
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">8. Razer Blade 16</div>
+    <div class="laptop-specs">
+      CPU: Intel Core i9-13950HX | RAM: 32GB | Storage: 1TB SSD | GPU: RTX 4080 | Display: 16" Dual Mode | Battery: 95Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">9. LG Gram 17 (2023)</div>
+    <div class="laptop-specs">
+      CPU: Intel Core i7-1360P | RAM: 16GB | Storage: 1TB SSD | GPU: Iris Xe | Display: 17" WQXGA | Battery: 80Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">10. MSI Stealth 14 Studio</div>
+    <div class="laptop-specs">
+      CPU: Intel Core i7-13700H | RAM: 16GB | Storage: 1TB SSD | GPU: RTX 4060 | Display: 14" QHD+ | Battery: 72Wh
+    </div>
+  </div>
+
+  <!-- Placeholders (11-20) -->
+  <div class="laptop-card">
+    <div class="laptop-title">11. Placeholder Laptop 11</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 8GB | Storage: 256GB SSD | GPU: Integrated | Display: 14" | Battery: 45Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">12. Placeholder Laptop 12</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 16GB | Storage: 512GB SSD | GPU: TBD | Display: 15.6" | Battery: 60Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">13. Placeholder Laptop 13</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 4GB | Storage: 128GB SSD | GPU: TBD | Display: 13.3" | Battery: 40Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">14. Placeholder Laptop 14</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 32GB | Storage: 1TB SSD | GPU: TBD | Display: 17" | Battery: 80Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">15. Placeholder Laptop 15</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 8GB | Storage: 256GB SSD | GPU: TBD | Display: 14.5" | Battery: 55Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">16. Placeholder Laptop 16</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 12GB | Storage: 512GB SSD | GPU: TBD | Display: 15.6" | Battery: 65Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">17. Placeholder Laptop 17</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 6GB | Storage: 256GB SSD | GPU: TBD | Display: 13.3" | Battery: 50Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">18. Placeholder Laptop 18</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 16GB | Storage: 1TB SSD | GPU: TBD | Display: 16" | Battery: 70Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">19. Placeholder Laptop 19</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 8GB | Storage: 128GB SSD | GPU: TBD | Display: 14" | Battery: 48Wh
+    </div>
+  </div>
+
+  <div class="laptop-card">
+    <div class="laptop-title">20. Placeholder Laptop 20</div>
+    <div class="laptop-specs">
+      CPU: TBD | RAM: 4GB | Storage: 64GB SSD | GPU: TBD | Display: 11.6" | Battery: 35Wh
+    </div>
+  </div>
+
+</body>
+</html>

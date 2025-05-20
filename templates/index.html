@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="static/style.css">
+  <script>const openButton = document.getElementById('open-sidebar-button')
+    const navbar = document.getElementById('navbar')
+    
+    const media = window.matchMedia("(width < 700px)")
+    
+    media.addEventListener('change', (e) => updateNavbar(e))
+    
+    function updateNavbar(e){
+      const isMobile = e.matches
+      console.log(isMobile)
+      if(isMobile){
+        navbar.setAttribute('inert', '')
+      }
+      else{
+        // desktop device
+        navbar.removeAttribute('inert')
+      }
+    }
+    
+    function openSidebar(){
+      navbar.classList.add('show')
+      openButton.setAttribute('aria-expanded', 'true')
+      navbar.removeAttribute('inert')
+    }
+    
+    function closeSidebar(){
+      navbar.classList.remove('show')
+      openButton.setAttribute('aria-expanded', 'false')
+      navbar.setAttribute('inert', '')
+    }
+    
+    // For Bookmark Links
+    // const navLinks = document.querySelectorAll('nav a')
+    // navLinks.forEach(link => {
+    //   link.addEventListener('click', () => {
+    //     closeSidebar()
+    //   })
+    // })
+    
+    updateNavbar(media)
+    let slide = document.getElementById('slide');
+    let upArrowb = document.getElementById('upArrowb');
+    let downArrowb = document.getElementById('downArrowb');
+    
+    var a = 0;
+    upArrowb.addEventListener('click' , ()=>{
+       
+        if(a < 0){
+            a = a+300;
+            slide.style.top=a+"px";
+    
+        }
+    
+    })
+    
+    downArrowb.addEventListener('click' , ()=>{
+       
+        if(a > "-900"){
+            a = a - 300;
+            slide.style.top=a+"px";
+    
+        }
+    
+    })
+    
+    </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+  --primary-color: #11121a;
+  --hover-color: #272832;
+  --accent-color: #0071FF;
+  --text-color: #c9c9c9;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-family: Poppins, 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  scroll-behavior: smooth; /*For bookmark links*/
+}
+body{
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--primary-color);
+}
+main{
+  padding: min(5em, 7%);
+}
+main p{
+  margin-top: .35em;
+}
+nav{
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--hover-color);
+}
+nav ul{
+  list-style: none;
+  display: flex;
+}
+nav .home-li{
+  margin-right: auto;
+}
+nav li{
+  display: flex;
+}
+nav a{
+  display: flex;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 1em 2em;
+  transition: background-color 150ms ease;
+}
+nav a:hover{
+  background-color: var(--hover-color);
+}
+nav a.active-link{
+  border-bottom: 2px solid var(--text-color);
+}
+nav a.accent-link{
+  background-color: var(--accent-color);
+}
+#open-sidebar-button{
+  display: none;
+  background: none;
+  border: none;
+  padding: 1em;
+  margin-left: auto;
+  cursor: pointer;
+}
+#close-sidebar-button{
+  display: none;
+  background: none;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+}
+#overlay{
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: none;
+}
+.skip-link {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: var(--accent-color); 
+  color: #ffffff; 
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.skip-link:focus {
+  opacity: 1; 
+  pointer-events: auto; 
+  outline: 3px solid #ffffff; 
+}
+@media screen and (max-width: 700px) {
+  #open-sidebar-button, #close-sidebar-button{
+    display: block;
+  }
+  nav{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: min(15em, 100%);
+    z-index: 10;
+    border-left: 1px solid var(--hover-color);
+    transition: right 300ms ease-in-out;
+  }
+  nav.show{
+    right: 0;
+  }
+  nav.show ~ #overlay{
+    display: block;
+  }
+  nav ul{
+    width: 100%;
+    flex-direction: column;
+  }
+  nav a{
+    width: 100%;
+    padding-left: 2.5em;
+  }
+  nav a.active-link{
+    border-bottom: none;
+  }
+  nav .home-li{
+    margin-right: unset;
+  }
+}footer{
+    background: #140B5C;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  footer::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100px;
+    height: 1px;
+    width: 100%;
+    background: #AFAFB6;
+  }
+  footer .content{
+    max-width: 1250px;
+    margin: auto;
+    padding: 30px 40px 40px 40px;
+  }
+  footer .content .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .content .top .logo-details{
+    color: #fff;
+    font-size: 30px;
+  }
+  .content .top .media-icons{
+    display: flex;
+  }
+  .content .top .media-icons a{
+    height: 40px;
+    width: 40px;
+    margin: 0 8px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+  .top .media-icons a:nth-child(1){
+    background: #4267B2;
+  }
+  .top .media-icons a:nth-child(1):hover{
+    color: #4267B2;
+    background: #fff;
+  }
+  .top .media-icons a:nth-child(2){
+    background: #1DA1F2;
+  }
+  .top .media-icons a:nth-child(2):hover{
+    color: #1DA1F2;
+    background: #fff;
+  }
+  .top .media-icons a:nth-child(3){
+    background: #E1306C;
+  }
+  .top .media-icons a:nth-child(3):hover{
+    color: #E1306C;
+    background: #fff;
+  }
+  .top .media-icons a:nth-child(4){
+    background: #0077B5;
+  }
+  .top .media-icons a:nth-child(4):hover{
+    color: #0077B5;
+    background: #fff;
+  }
+  .top .media-icons a:nth-child(5){
+    background: #FF0000;
+  }
+  .top .media-icons a:nth-child(5):hover{
+    color: #FF0000;
+    background: #fff;
+  }
+  footer .content .link-boxes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 5 - 10px);
+  }
+  .content .link-boxes .box .link_name{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .link-boxes .box .link_name::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 35px;
+    background: #fff;
+  }
+  .content .link-boxes .box li{
+    margin: 6px 0;
+    list-style: none;
+  }
+  .content .link-boxes .box li a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.4s ease
+  }
+  .content .link-boxes .box li a:hover{
+    opacity: 1;
+    text-decoration: underline;
+  }
+  .content .link-boxes .input-box{
+    margin-right: 55px;
+  }
+  .link-boxes .input-box input{
+    height: 40px;
+    width: calc(100% + 55px);
+    outline: none;
+    border: 2px solid #AFAFB6;
+    background: #140B5C;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 5px;
+  }
+  .link-boxes .input-box input::placeholder{
+    color: #AFAFB6;
+    font-size: 16px;
+  }
+  .link-boxes .input-box input[type="button"]{
+    background: #fff;
+    color: #140B5C;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 4px 0;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  .input-box input[type="button"]:hover{
+    opacity: 1;
+  }
+  footer .bottom-details{
+    width: 100%;
+    background: #0F0844;
+  }
+  footer .bottom-details .bottom_text{
+    max-width: 1250px;
+    margin: auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a{
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+  }
+  .bottom-details .bottom_text a:hover{
+    opacity: 1;
+    text-decoration: underline;
+  }
+  .bottom-details .bottom_text a{
+    margin-right: 10px;
+  }
+  @media (max-width: 900px) {
+    footer .content .link-boxes{
+      flex-wrap: wrap;
+    }
+    footer .content .link-boxes .input-box{
+      width: 40%;
+      margin-top: 10px;
+    }
+  }
+  @media (max-width: 700px){
+    footer{
+      position: relative;
+    }
+    .content .top .logo-details{
+      font-size: 26px;
+    }
+    .content .top .media-icons a{
+      height: 35px;
+      width: 35px;
+      font-size: 14px;
+      line-height: 35px;
+    }
+    footer .content .link-boxes .box{
+      width: calc(100% / 3 - 10px);
+    }
+    footer .content .link-boxes .input-box{
+      width: 60%;
+    }
+    .bottom-details .bottom_text span,
+    .bottom-details .bottom_text a{
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 520px){
+    footer::before{
+      top: 145px;
+    }
+    footer .content .top{
+      flex-direction: column;
+    }
+    .content .top .media-icons{
+      margin-top: 16px;
+    }
+    footer .content .link-boxes .box{
+      width: calc(100% / 2 - 10px);
+    }
+    footer .content .link-boxes .input-box{
+      width: 100%;
+    }
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.container h1{
+    font-size: 30px;
+    position: relative;
+    margin-bottom: 70px;
+
+}
+.container h1::after{
+    content: "";
+    width:150px;
+    height: 3px;
+    background:linear-gradient(to right,#e42315,#ec650b,#9934eb);
+    position: absolute;
+    bottom:-10px;
+    left:50%;
+    transform: translateX(-50%);
+}
+.Reviews_box{
+    width: 70%;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: -10px 10px 40px rgba(0,0,0,0.25);
+    overflow: hidden;
+
+    
+}
+#slide{
+    width:100%;
+    padding-right: 60px;
+    box-sizing: border-box;
+    position:absolute;
+    top:0;
+    left:0;
+    transition: 0.5s;
+}
+.card{
+    height: 300px;
+    color:#777;
+    line-height: 22px;
+    box-sizing: border-box;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+    padding:40px;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.profile img{
+    width:100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.profile h3{
+    color:#9934eb;
+    margin-bottom: 8px;
+    font-size: 21px;
+
+}
+.slidebar{
+    width: 60px;
+    height: 100%;
+    padding:15px 0px;
+    box-sizing: border-box;
+    background-color: #6b34eb;
+    position: absolute;
+    right: 0;
+    top:0;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.slidebar img{
+    width: 40px;
+    height: 40px;
+    padding:5px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor:pointer;
+}
+.card::before{
+    content: "";
+    width: 110px;
+    height: 110px;
+    border-bottom-right-radius: 100%;
+    position: absolute;
+    background-color: #6b34eb;
+    top:0;
+    left:0;
+    z-index: -1;
+}
+.card p{
+    font-size: 18px;
+}
+::selection{
+    color:white;
+    background-color: #6b34eb;
+}
+.cube-cluster {
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .cube-cluster h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  
+  .cube-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .cube {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow:hidden;
+  }
+  
+  .cube img {
+    width: px;
+    height: 90px;
+    margin-bottom: 5px;
+    transition: transform 0.3s;
+  }
+  
+  .cube p {
+    font-size: 0.75em;
+    color: #333;
+    margin: 0;
+    display: nonex;
+  }
+  
+  .cube:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+  
+  .cube:hover img {
+    transform: scale(1.1);
+  }
+  
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z"/></svg>
+  </button>
+
+  <nav id="navbar">
+    <ul>
+      <li>
+        <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="m480-444.62-209.69 209.7q-7.23 7.23-17.5 7.42-10.27.19-17.89-7.42-7.61-7.62-7.61-17.7 0-10.07 7.61-17.69L444.62-480l-209.7-209.69q-7.23-7.23-7.42-17.5-.19-10.27 7.42-17.89 7.62-7.61 17.7-7.61 10.07 0 17.69 7.61L480-515.38l209.69-209.7q7.23-7.23 17.5-7.42 10.27-.19 17.89 7.42 7.61 7.62 7.61 17.7 0 10.07-7.61 17.69L515.38-480l209.7 209.69q7.23 7.23 7.42 17.5.19 10.27-7.42 17.89-7.62 7.61-17.7 7.61-10.07 0-17.69-7.61L480-444.62Z"/></svg>
+        </button>
+      </li>
+      <li class="home-li"><a class="active-link" aria-current="page" href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a class="accent-link" href="login.html">Login</a></li>
+    </ul>
+  </nav>
+  
+  <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+
+  <main>
+    <h1>Home</h1>
+    <p>Welcome to tech review website
+      Where technology meets clarity, and innovation is decoded.
+      We bring you in-depth reviews, expert comparisons, and honest verdicts—
+      covering the latest smartphones, laptops, wearables, and more.
+      Our team explores every detail so you can make smarter tech choices.
+      Whether you're a casual user or a power enthusiast,
+      this is your hub for trusted insights and future-ready recommendations.</p>
+  </main>
+  <div class="container">
+    <h1>Customer Reviews</h1>
+    <div class="Reviews_box">
+        <div id = "slide">
+            
+            <!--1-->
+            <div class="card">
+                <div class="profile">
+                    <img src="images/amitprajapati.png">
+                    <div>
+                        <h3>Amit Prajapati</h3>
+                        <p>Web Designer</p>
+                    </div>
+                </div>
+                <p>Hello Friends, I am Amit Prajapati proffissional by Web Designer.</p>
+            </div>
+
+            <!--2-->
+            <div class="card">
+                <div class="profile">
+                    <img src="images/amitprajapati2.jpeg">
+                    <div>
+                        <h3>Amit Prajapati 2</h3>
+                        <p>JavaScript Developer</p>
+                    </div>
+                </div>
+                <p>Hello Friends, I am Amit Prajapati proffissional by JavaScript Developer.</p>
+            </div>
+
+            <!--3-->
+            <div class="card">
+                <div class="profile">
+                    <img src="images/amitprajapati3.jpeg">
+                    <div>
+                        <h3>Amit Prajapati 3</h3>
+                        <p>Python Developer</p>
+                    </div>
+                </div>
+                <p>Hello Friends, I am Amit Prajapati proffissional by Python Developer.</p>
+            </div>
+
+            <!--4-->
+            <div class="card">
+                <div class="profile">
+                    <img src="images/amitprajapati4.jpeg">
+                    <div>
+                        <h3>Amit Prajapati 3</h3>
+                        <p>Android Developer</p>
+                    </div>
+                </div>
+                <p>Hello Friends, I am Amit Prajapati proffissional by Android Developer.</p>
+            </div>
+
+
+        </div>
+
+        <div class="slidebar">
+            <img src="images/upArrowb.png" id="upArrowb">
+            <img src="images/downArrowb.png" id="downArrowb">
+        </div>
+    </div>
+</div>
+<section class="cube-cluster">
+    <h2>Trending Gadgets</h2>
+    <div class="cube-grid">
+      <div class="cube" data-link="smartphones.html">
+        <a href="phone.html"><img src="https://thumbs.dreamstime.com/b/smart-phone-icon-vector-illustration-102509241.jpg" alt="Smartphone"></a>
+      </div>
+      <div class="cube" data-link="laptops.html">
+        <a href="Untitled.html"><img src="https://i.pinimg.com/474x/d4/db/38/d4db38b9f8a065a093e5170c636f98aa.jpg" alt="Laptop"></a>
+      
+      </div>
+      <div class="cube" data-link="tablets.html">
+        <a href="d.html"><img src="https://st2.depositphotos.com/4202565/8321/v/950/depositphotos_83214364-stock-illustration-tablet-icon-with-empty-screen.jpg" alt="Tablet"></a>
+        
+      </div>
+      <div class="cube" data-link="headphones.html">
+        <a href="Untitled-2.html"><img src="https://static.vecteezy.com/system/resources/previews/014/420/870/non_2x/headphones-icon-silhouette-free-vector.jpg" alt="Headphones"></a>
+      
+      </div>
+      <div class="cube" data-link="smartwatches.html">
+        <a href="s.html"><img src="https://png.pngtree.com/png-vector/20191130/ourmid/pngtree-smartwatch-icon-png-image_2058326.jpg" alt="Smartwatch"></a>
+        
+      </div>
+      <div class="cube" data-link="cameras.html">
+        <a href="c.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/002/261/132/small_2x/camera-icon-symbol-sign-isolate-on-white-background-illustration-eps-10-free-vector.jpg" alt="Camera"></a>
+        
+      </div>
+      <!-- Add more cubes here if needed -->
+    </div>
+  </section>
+  <a href="https://flask-app-4-7vld.onrender.com/">hello</a>
+
+  <footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <i class="fab fa-slack"></i>
+          <span class="logo_name">Tech Review Website</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Company</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Get started</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Services</li>
+          <li><a href="#">App design</a></li>
+          <li><a href="#">Web design</a></li>
+          <li><a href="#">Logo design</a></li>
+          <li><a href="#">Banner design</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My account</a></li>
+          <li><a href="#">Prefrences</a></li>
+          <li><a href="#">Purchase</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Courses</li>
+          <li><a href="#">HTML & CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Photography</a></li>
+          <li><a href="#">Photoshop</a></li>
+        </ul>
+        
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright &#169; 2021 <a href="#">CodingLab.</a>All rights reserved</span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

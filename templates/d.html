@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tablet Specs</title>
+  <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+  --primary-color: #11121a;
+  --hover-color: #272832;
+  --accent-color: #0071FF;
+  --text-color: #c9c9c9;
+}
+nav{
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--hover-color);
+  margin-top:-20px;
+  margin-left:-20px;
+  margin-right:-20px;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+}
+nav .home-li{
+  margin-right: auto;
+}
+nav li{
+  display: flex;
+}
+nav a{
+  display: flex;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 1em 2em;
+  transition: background-color 150ms ease;
+}
+nav a:hover{
+  background-color: var(--hover-color);
+}
+nav a.active-link{
+  border-bottom: 2px solid var(--text-color);
+}
+nav a.accent-link{
+  background-color: var(--accent-color);
+}
+#open-sidebar-button{
+  display: none;
+  background: none;
+  border: none;
+  padding: 1em;
+  margin-left: auto;
+  cursor: pointer;
+}
+#close-sidebar-button{
+  display: none;
+  background: none;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+}
+#overlay{
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: none;
+}
+.skip-link {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: var(--accent-color); 
+  color: #ffffff; 
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.skip-link:focus {
+  opacity: 1; 
+  pointer-events: auto; 
+  outline: 3px solid #ffffff; 
+}
+@media screen and (max-width: 700px) {
+  #open-sidebar-button, #close-sidebar-button{
+    display: block;
+  }
+  nav{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: min(15em, 100%);
+    z-index: 10;
+    border-left: 1px solid var(--hover-color);
+    transition: right 300ms ease-in-out;
+  }
+  nav.show{
+    right: 0;
+  }
+  nav.show ~ #overlay{
+    display: block;
+  }
+  nav ul{
+    width: 100%;
+    flex-direction: column;
+  }
+  nav a{
+    width: 100%;
+    padding-left: 2.5em;
+  }
+  nav a.active-link{
+    border-bottom: none;
+  }
+  nav .home-li{
+    margin-right: unset;
+  }
+}
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    .tablet-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .tablet-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .tablet-specs {
+      margin-top: 8px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z"/></svg>
+  </button>
+
+  <nav id="navbar">
+    <ul>
+      <li>
+        <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="m480-444.62-209.69 209.7q-7.23 7.23-17.5 7.42-10.27.19-17.89-7.42-7.61-7.62-7.61-17.7 0-10.07 7.61-17.69L444.62-480l-209.7-209.69q-7.23-7.23-7.42-17.5-.19-10.27 7.42-17.89 7.62-7.61 17.7-7.61 10.07 0 17.69 7.61L480-515.38l209.69-209.7q7.23-7.23 17.5-7.42 10.27-.19 17.89 7.42 7.61 7.62 7.61 17.7 0 10.07-7.61 17.69L515.38-480l209.7 209.69q7.23 7.23 7.42 17.5.19 10.27-7.42 17.89-7.62 7.61-17.7 7.61-10.07 0-17.69-7.61L480-444.62Z"/></svg>
+        </button>
+      </li>
+      <li class="home-li"><a class="active-link" aria-current="page" href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a class="accent-link" href="login.html">Login</a></li>
+    </ul>
+  </nav>
+  
+  <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+
+  <h1>Tablet Specifications</h1>
+
+  <div class="tablet-card">
+    <div class="tablet-title">1. Apple iPad Pro 12.9 (2022)</div>
+    <div class="tablet-specs">
+      Chip: M2 | Display: 12.9" Liquid Retina XDR | RAM: 8GB | Storage: 128GB | Battery: 10758mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">2. Samsung Galaxy Tab S9 Ultra</div>
+    <div class="tablet-specs">
+      Chip: Snapdragon 8 Gen 2 | Display: 14.6" AMOLED | RAM: 12GB | Storage: 256GB | Battery: 11200mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">3. Microsoft Surface Pro 9</div>
+    <div class="tablet-specs">
+      Chip: Intel Core i5/i7 | Display: 13" PixelSense | RAM: 8GB | Storage: 256GB | Battery: 7500mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">4. Lenovo Tab P12 Pro</div>
+    <div class="tablet-specs">
+      Chip: Snapdragon 870 | Display: 12.6" AMOLED | RAM: 6GB | Storage: 128GB | Battery: 10200mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">5. Xiaomi Pad 6</div>
+    <div class="tablet-specs">
+      Chip: Snapdragon 870 | Display: 11" LCD | RAM: 8GB | Storage: 256GB | Battery: 8840mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">6. Huawei MatePad Pro 12.6</div>
+    <div class="tablet-specs">
+      Chip: Kirin 9000E | Display: 12.6" OLED | RAM: 8GB | Storage: 256GB | Battery: 10090mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">7. OnePlus Pad</div>
+    <div class="tablet-specs">
+      Chip: MediaTek Dimensity 9000 | Display: 11.61" IPS | RAM: 8GB | Storage: 128GB | Battery: 9510mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">8. Amazon Fire Max 11</div>
+    <div class="tablet-specs">
+      Chip: MediaTek MT8188J | Display: 11" LCD | RAM: 4GB | Storage: 64GB | Battery: 7500mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">9. Realme Pad X</div>
+    <div class="tablet-specs">
+      Chip: Snapdragon 695 | Display: 10.95" LCD | RAM: 6GB | Storage: 128GB | Battery: 8340mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">10. Oppo Pad 2</div>
+    <div class="tablet-specs">
+      Chip: Dimensity 9000 | Display: 11.6" IPS LCD | RAM: 8GB | Storage: 256GB | Battery: 9510mAh
+    </div>
+  </div>
+
+  <!-- Tablets 11 to 20 with placeholder names/specs -->
+  <div class="tablet-card">
+    <div class="tablet-title">11. Placeholder Tablet 11</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 11" LCD | RAM: 4GB | Storage: 64GB | Battery: 7000mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">12. Placeholder Tablet 12</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 10.5" LCD | RAM: 3GB | Storage: 32GB | Battery: 6000mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">13. Placeholder Tablet 13</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 12.3" IPS | RAM: 6GB | Storage: 128GB | Battery: 8000mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">14. Placeholder Tablet 14</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 10.1" LCD | RAM: 2GB | Storage: 32GB | Battery: 5000mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">15. Placeholder Tablet 15</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 11.6" OLED | RAM: 8GB | Storage: 256GB | Battery: 9000mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">16. Placeholder Tablet 16</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 9.7" IPS | RAM: 3GB | Storage: 64GB | Battery: 5500mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">17. Placeholder Tablet 17</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 12" OLED | RAM: 6GB | Storage: 128GB | Battery: 8500mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">18. Placeholder Tablet 18</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 10.2" LCD | RAM: 4GB | Storage: 64GB | Battery: 6800mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">19. Placeholder Tablet 19</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 11" IPS | RAM: 4GB | Storage: 128GB | Battery: 7200mAh
+    </div>
+  </div>
+
+  <div class="tablet-card">
+    <div class="tablet-title">20. Placeholder Tablet 20</div>
+    <div class="tablet-specs">
+      Chip: TBD | Display: 10.4" LCD | RAM: 3GB | Storage: 64GB | Battery: 6000mAh
+    </div>
+  </div>
+  <footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <i class="fab fa-slack"></i>
+          <span class="logo_name">Tech Review Website</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Company</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Get started</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Services</li>
+          <li><a href="#">App design</a></li>
+          <li><a href="#">Web design</a></li>
+          <li><a href="#">Logo design</a></li>
+          <li><a href="#">Banner design</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My account</a></li>
+          <li><a href="#">Prefrences</a></li>
+          <li><a href="#">Purchase</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Courses</li>
+          <li><a href="#">HTML & CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Photography</a></li>
+          <li><a href="#">Photoshop</a></li>
+        </ul>
+        
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright &#169; 2021 <a href="#">CodingLab.</a>All rights reserved</span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
