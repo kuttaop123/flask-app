@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PyScript Mobile Comparison</title>
+
+<!-- PyScript CSS and JS -->
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #001f3f;
+    color: white;
+    margin: 20px;
+  }
+  select, button {
+    padding: 8px;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+  }
+  button {
+    background-color: #0059b3;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0073e6;
+  }
+  #result {
+    margin-top: 20px;
+    background-color: #00264d;
+    padding: 15px;
+    border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Compare Mobile Phones</h1>
+
+<label for="phone1">Select Phone 1:</label>
+<select id="phone1">
+  <option value="">--Select--</option>
+</select>
+
+<label for="phone2">Select Phone 2:</label>
+<select id="phone2">
+  <option value="">--Select--</option>
+</select>
+
+<button id="compare-btn">Compare</button>
+
+<div id="result"></div>
+
+<py-script>
+from js import document
+
+phones = {
+    "Phone A": {"battery": 4000, "build": 8, "camera": 48, "performance": 7, "display": 6.5, "price": 699},
+    "Phone B": {"battery": 4500, "build": 9, "camera": 64, "performance": 8, "display": 6.8, "price": 799},
+    "Phone C": {"battery": 3800, "build": 7, "camera": 50, "performance": 6, "display": 6.4, "price": 599},
+}
+
+phone1_select = document.getElementById("phone1")
+phone2_select = document.getElementById("phone2")
+result_div = document.getElementById("result")
+
+# Populate dropdowns
+for phone in phones:
+    option1 = document.createElement("option")
+    option1.value = phone
+    option1.textContent = phone
+    phone1_select.appendChild(option1)
+    
+    option2 = document.createElement("option")
+    option2.value = phone
+    option2.textContent = phone
+    phone2_select.appendChild(option2)
+
+def compare_phones(phone1, phone2):
+    if phone1 == phone2 or phone1 == "" or phone2 == "":
+        return "<p style='color:#ff6666;'>Please select two different phones to compare.</p>"
+    p1 = phones[phone1]
+    p2 = phones[phone2]
+    specs = ["battery", "build", "camera", "performance", "display", "price"]
+    better_in = {phone1: [], phone2: []}
+    score = {phone1: 0, phone2: 0}
+    for spec in specs:
+        val1 = p1[spec]
+        val2 = p2[spec]
+        if spec == "price":
+            if val1 < val2:
+                better_in[phone1].append(spec)
+                score[phone1] += 1
+            elif val2 < val1:
+                better_in[phone2].append(spec)
+                score[phone2] += 1
+        else:
+            if val1 > val2:
+                better_in[phone1].append(spec)
+                score[phone1] += 1
+            elif val2 > val1:
+                better_in[phone2].append(spec)
+                score[phone2] += 1
+    overall = "Tie"
+    if score[phone1] > score[phone2]:
+        overall = phone1
+    elif score[phone2] > score[phone1]:
+        overall = phone2
+    
+    result = f"<h3>Comparison Result</h3>"
+    result += f"<p><b>{phone1}</b> better in: {', '.join(better_in[phone1]) or 'None'}</p>"
+    result += f"<p><b>{phone2}</b> better in: {', '.join(better_in[phone2]) or 'None'}</p>"
+    result += f"<p><b>Overall Winner:</b> {overall}</p>"
+    return result
+
+def on_click(evt):
+    phone1 = phone1_select.value
+    phone2 = phone2_select.value
+    result_div.innerHTML = compare_phones(phone1, phone2)
+
+document.getElementById("compare-btn").addEventListener("click", on_click)
+</py-script>
+
+</body>
+</html>

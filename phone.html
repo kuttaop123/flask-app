@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Phone Specifications</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a192f; /* Navy background */
+      color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .phone-card {
+      background-color: #112240;
+      border: 1px solid #1d3557;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    .phone-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin-top: 15px;
+      cursor: pointer;
+      padding: 10px;
+      background-color: #1b2b45;
+      border-radius: 5px;
+    }
+
+    .section:hover {
+      background-color: #2c3e66;
+    }
+
+    .section-content {
+      display: none;
+      padding: 10px 20px;
+      border-left: 2px solid #3fa9f5;
+      margin-top: 10px;
+      background-color: #0f223c;
+    }
+
+    .advanced {
+      margin-top: 10px;
+      cursor: pointer;
+      color: #3fa9f5;
+    }
+
+    .advanced-content {
+      display: none;
+      margin-top: 5px;
+      padding-left: 20px;
+      color: #b2c8e6;
+    }
+
+    .toggle-button::before {
+      content: "▶";
+      margin-right: 8px;
+    }
+
+    .toggle-button.open::before {
+      content: "▼";
+    }
+
+    .divider {
+      height: 1px;
+      background-color: #35506b;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📱 Mobile Phone Specifications</h1>
+
+    <!-- Phone 1 -->
+    <div class="phone-card">
+      <div class="phone-title">iPhone 15 Pro Max</div>
+
+      <!-- Build Section -->
+      <div class="section toggle-button" onclick="toggleSection(this)">
+        Build
+      </div>
+      <div class="section-content">
+        <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+        <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+        <p><strong>Weight:</strong> 221g</p>
+        <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+
+        <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+        <div class="advanced-content">
+          <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+          <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+          <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+        </div>
+      </div>
+
+      <!-- Technical Section -->
+      <div class="section toggle-button" onclick="toggleSection(this)">
+        Technical Details
+      </div>
+      <div class="section-content">
+        <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+        <p><strong>RAM:</strong> 8GB</p>
+        <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+        <p><strong>Battery:</strong> 4422mAh</p>
+        <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+        <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+
+        <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+        <div class="advanced-content">
+          <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+          <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+          <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+          <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+        </div>
+      </div>
+
+      <!-- Pricing & Sellers Section -->
+      <div class="section toggle-button" onclick="toggleSection(this)">
+        Pricing & Sellers
+      </div>
+      <div class="section-content">
+        <p><strong>Amazon:</strong> ₹1,39,900</p>
+        <p><strong>Flipkart:</strong> ₹1,37,999</p>
+        <p><strong>Apple Store:</strong> ₹1,39,900</p>
+
+        <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+        <div class="advanced-content">
+          <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+          <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+        </div>
+      </div>
+    </div>
+    <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-card">
+        <div class="phone-title">iPhone 15 Pro Max</div>
+  
+        <!-- Build Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Build
+        </div>
+        <div class="section-content">
+          <p><strong>Body:</strong> Titanium frame, Ceramic Shield front</p>
+          <p><strong>Dimensions:</strong> 159.9 x 76.7 x 8.25 mm</p>
+          <p><strong>Weight:</strong> 221g</p>
+          <p><strong>Protection:</strong> IP68 dust/water resistant</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Build Details</div>
+          <div class="advanced-content">
+            <p><strong>Materials:</strong> Aerospace-grade titanium, back glass</p>
+            <p><strong>Resistance:</strong> Water resistant up to 6m for 30 min</p>
+            <p><strong>Other:</strong> Ceramic Shield is tougher than any smartphone glass</p>
+          </div>
+        </div>
+  
+        <!-- Technical Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Technical Details
+        </div>
+        <div class="section-content">
+          <p><strong>Chipset:</strong> A17 Pro (3 nm)</p>
+          <p><strong>RAM:</strong> 8GB</p>
+          <p><strong>Storage:</strong> 128GB / 256GB / 512GB / 1TB</p>
+          <p><strong>Battery:</strong> 4422mAh</p>
+          <p><strong>Display:</strong> 6.7" Super Retina XDR OLED, 120Hz</p>
+          <p><strong>Camera:</strong> Triple 48MP + 12MP + 12MP</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ Advanced Technical Details</div>
+          <div class="advanced-content">
+            <p><strong>GPU:</strong> Apple GPU (6-core graphics)</p>
+            <p><strong>Video:</strong> ProRes, Cinematic mode (4K at 30 fps)</p>
+            <p><strong>OS:</strong> iOS 17 (upgradable)</p>
+            <p><strong>Sensors:</strong> Face ID, Accelerometer, Gyro, Barometer, Compass</p>
+          </div>
+        </div>
+  
+        <!-- Pricing & Sellers Section -->
+        <div class="section toggle-button" onclick="toggleSection(this)">
+          Pricing & Sellers
+        </div>
+        <div class="section-content">
+          <p><strong>Amazon:</strong> ₹1,39,900</p>
+          <p><strong>Flipkart:</strong> ₹1,37,999</p>
+          <p><strong>Apple Store:</strong> ₹1,39,900</p>
+  
+          <div class="advanced" onclick="toggleAdvanced(this)">+ EMI & Offers</div>
+          <div class="advanced-content">
+            <p><strong>Bank Offer:</strong> ₹5,000 Instant Discount on HDFC Cards</p>
+            <p><strong>EMI:</strong> Starting ₹4,599/month</p>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- More phone-cards can be added here -->
+    <!-- Just copy the .phone-card div and update content -->
+
+  </div>
+
+  <script>
+    function toggleSection(el) {
+      el.classList.toggle('open');
+      const content = el.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      content.style.transition = content.style.transition === 'all 0.3s ease' ? 'none' : 'all 0.3s ease';
+    }
+
+    function toggleAdvanced(el) {
+      const content = el.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
